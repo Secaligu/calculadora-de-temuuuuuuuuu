@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de temu</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de temu</h1>
+    </header>
+    <div class="calculadora">
+        <br>
+        <input type="text" id="resultado" disabled>
+        <br>
+        <button class="boton" onclick="agregar('7')">7</button>
+        <button class="boton" onclick="agregar('8')">8</button>
+        <button class="boton" onclick="agregar('9')">9</button>
+        <button class="boton" onclick="agregar('/')">/</button>
+        <br>
+        <button class="boton" onclick="agregar('4')">4</button>
+        <button class="boton" onclick="agregar('5')">5</button>
+        <button class="boton" onclick="agregar('6')">6</button>
+        <button class="boton" onclick="agregar('*')">*</button>
+        <br>
+        <button class="boton" onclick="agregar('1')">1</button>
+        <button class="boton" onclick="agregar('2')">2</button>
+        <button class="boton" onclick="agregar('3')">3</button>
+        <button class="boton" onclick="agregar('-')">-</button>
+        <br>
+        <button class="boton" onclick="agregar('0')">0</button>
+        <button class="boton" onclick="agregar('.')">.</button>
+        <button class="boton" onclick="calcular()">=</button>
+        <button class="boton" onclick="agregar('+')">+</button>
+        <br>
+        <button class="boton" onclick="borrar()">🗑️</button>
+    </div>
+     <h3>&copy; calculadora de TEMU por Sebastian Camilo Linares Gutierrez &COPY;</h3>
+    <script>
+        function agregar(valor) {
+            document.getElementById('resultado').value += valor;
+        }
+
+        function calcular() {
+            try {
+                document.getElementById('resultado').value = 
+                    eval(document.getElementById('resultado').value);
+            } catch (e) {
+                document.getElementById('resultado').value = "Error";
+            }
+        }
+
+        function borrar() {
+            document.getElementById('resultado').value = "";
+        }
+    </script>
+</body>
+</html>
